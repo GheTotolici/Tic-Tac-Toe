@@ -17,15 +17,6 @@ function disableButtons() {
     allButtons.forEach((element) => (element.disabled = true));
 }
 
-function winningGame(letter) {
-    disableButtons();
-    if (letter == "X") {
-        displayMsg.innerHTML = "Player 'X' has won";
-    } else {
-        displayMsg.innerHTML = "Player 'O' has won";
-    }
-}
-
 function checkWinner() {
     for (let i of winningMoves) {
         let [element1, element2, element3] = [
@@ -36,6 +27,15 @@ function checkWinner() {
         if (element1 != "" && element1 == element2 && element2 == element3) {
             winningGame(element1);
         }
+    }
+}
+
+function winningGame(letter) {
+    disableButtons();
+    if (letter == "X") {
+        displayMsg.innerHTML = "Player 'X' has won";
+    } else {
+        displayMsg.innerHTML = "Player 'O' has won";
     }
 }
 
@@ -55,7 +55,6 @@ allButtons.forEach((element) => {
         }
         ++count;
         if (count == 9) {
-            disableButtons();
             displayMsg.innerHTML = "We have a Draw";
         }
         checkWinner();
