@@ -46,17 +46,16 @@ allButtons.forEach((element) => {
             xTurn = false;
             element.innerText = "X";
             displayMsg.innerHTML = "It's player O's turn";
-            element.disabled = true;
         } else {
             displayMsg.innerHTML = "It's player X's turn";
             xTurn = true;
             element.innerText = "O";
-            element.disabled = true;
         }
         ++count;
         if (count == 9) {
             displayMsg.innerHTML = "We have a Draw";
         }
+        element.disabled = true;
         checkWinner();
     });
 });
