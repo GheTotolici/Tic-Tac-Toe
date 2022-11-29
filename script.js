@@ -45,9 +45,7 @@ allButtons.forEach((element) => {
         if (xTurn) {
             xTurn = false;
             element.innerText = "X";
-            displayMsg.innerHTML = "It's player O's turn";
         } else {
-            displayMsg.innerHTML = "It's player X's turn";
             xTurn = true;
             element.innerText = "O";
         }
