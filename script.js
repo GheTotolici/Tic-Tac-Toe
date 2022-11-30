@@ -33,9 +33,9 @@ function checkWinner() {
 function winningGame(letter) {
     disableButtons();
     if (letter == "X") {
-        displayMsg.innerHTML = "Player 'X' has won";
+        displayMsg.innerHTML = "Player " + letter + " has won";
     } else {
-        displayMsg.innerHTML = "Player 'O' has won";
+        displayMsg.innerHTML = "Player " + letter + " has won";
     }
 }
 
@@ -45,9 +45,11 @@ allButtons.forEach((element) => {
         if (xTurn) {
             xTurn = false;
             element.innerText = "X";
+            displayMsg.innerHTML = "It's Player O's turn";
         } else {
             xTurn = true;
             element.innerText = "O";
+            displayMsg.innerHTML = "It's Player X's turn";
         }
         ++count;
         if (count == 9) {
